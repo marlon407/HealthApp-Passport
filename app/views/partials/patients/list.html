@@ -1,0 +1,19 @@
+<section ng-controller='PatientsCtrl' ng-init="find()">
+    <div style="display:flex">
+        <input type="text" placeholder="Search by Patient's last name" ng-model="searchBy"  class="form-control">
+        <div class="pull-right">
+            <button class=" btn pull-right" ng-click="filter(searchBy)">Search</button>
+        </div>
+</div>
+<div ng-repeat="patient in patients">
+    <div>
+        <h3><a ng-href="patients/{{patient._id}}">{{patient.FirstName}} {{patient.LastName}} </a></h3>
+    </div>
+    <div>
+        <span class="badge badge-success">Posted {{patient.created | date:'medium'}}</span>
+        <div class="pull-right"><span class="badge badge-success">Posted by {{patient.creator.username}}</span></div>
+    </div>
+    <br>
+</div>
+<h1 ng-hide="!patients || patients.length">No patients yet. <br> Why don't you <a href="/patients/create">Create One</a>?</h1>
+</section>

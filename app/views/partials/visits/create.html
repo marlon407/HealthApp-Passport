@@ -1,0 +1,22 @@
+<section ng-init="loadPage()">
+    <form class="form-horizontal" ng-submit="create()">
+        <div class="form-group">
+            <label class="control-label" for="FirstName">Complaint</label>
+            <div class="controls">
+                <input type="text" ng-model="visit.Complaint" class="form-control" id="FirstName" placeholder="First Name" required="" class="form-control">
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" for="LastName">Bililng</label>
+            <div class="controls">
+                <input type="text" ng-model="visit.Bililng" class="form-control" id="LastName" placeholder=" LastName" required="" class="form-control">
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="controls">
+                <button type="submit" class="btn btn-primary pull-left">Submit</button>
+            </div>
+        </div>
+    </form>
+</section>

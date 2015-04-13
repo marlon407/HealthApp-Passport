@@ -1,0 +1,9 @@
+<section ng-controller='VisitCtrl' ng-init="find()">
+
+    <div ng-repeat="visit in visits">
+        {{visit.Complaint}} {{visit.Bililng}}
+    </div>
+
+    <button class=" btn pull-right" ng-click="createLink()" style="margin-botton:10px" >Create Visit </button>
+
+</section>

@@ -1,0 +1,26 @@
+<section ng-init="find()">
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-8">
+      <!--Body content-->
+      <ul class="patients">
+  		<div class="selectOrder">
+  			<label class="col-sm-7">List of all Patients</label>
+      		<label class="col-sm-2">Sort by: </label>
+  			<select ng-model="orderProp" id="mySel" class="form-control">
+		        <option value="LastName">Alphabetical</option>
+		    	<option value="lastVisitDate">Last Visit</option>
+		    </select>
+		</div>
+        <li ng-repeat="patient in patients | orderBy:orderProp:reverse" class="patient-listing">
+          <p>Patient Name: <a href="#/patients/{{patient.PatientId}}">{{patient.FirstName}} {{patient.LastName}}</a></p>
+     
+   	 		<p>Patient Phone Number: {{patient.PhoneNo | tel}}</p>
+
+     		<p>Last Visit: {{patient.lastVisitDate | date}}</p>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+</secion>

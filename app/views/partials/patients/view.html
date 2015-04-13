@@ -1,0 +1,10 @@
+<section ng-controller='PatientsCtrl' ng-init="findOne()">
+    <p>{{patient.FirstName}}  {{patient.LastName}}
+    	<button class=" btn pull-right" ng-click="remove(patient)" ng-show="currentUser._id == patient.creator._id" style="margin-botton:10px" >Delete </button>
+    	<button class=" btn pull-right" ng-click="edit(patient)" ng-show="currentUser._id == patient.creator._id" style="margin-botton:10px" >Edit </button>
+    	<button class=" btn pull-right" ng-click="visits(patient)" ng-show="currentUser._id == patient.creator._id" style="margin-botton:10px" >View Visits </button>
+    </p>
+    <div>
+        <span class="badge badge-success">Posted {{patient.created | date:'medium'}} by {{patient.creator.username}} </span>
+    </div>
+</section>
